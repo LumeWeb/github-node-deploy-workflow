@@ -19,7 +19,6 @@ jobs:
                 uses: shimataro/ssh-key-action@v2
                 with:
                     key: ${{ secrets.GITEA_SSH_KEY }}
-                    name: gitea
                     known_hosts: ${{ secrets.GITEA_KNOWN_HOST }}
             -   name: Publish
                 run: npm run semantic-release
