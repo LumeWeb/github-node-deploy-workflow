@@ -20,7 +20,7 @@ jobs:
                 with:
                     type: tar
                     filename: build.tar.gz
-                    exclusions: "*.git*"
+                    exclusions: "*.git* *.tar.gz"
             -   name: Cache build
                 uses: actions/upload-artifact@v3
                 with:
