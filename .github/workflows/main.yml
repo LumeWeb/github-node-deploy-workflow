@@ -29,7 +29,7 @@ jobs:
             -  uses: actions/cache/restore@v3
                with:
                    path: .
-                   key: ${{ steps.cache.outputs.cache-primary-key }}
+                   key: ${{ needs.build.steps.cache.outputs.cache-primary-key }}
             -   name: Install SSH key
                 uses: shimataro/ssh-key-action@v2
                 with:
