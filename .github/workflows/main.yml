@@ -22,6 +22,8 @@ jobs:
                     known_hosts: ${{ secrets.GITEA_KNOWN_HOST }}
             -   name: Publish
                 run: npm run semantic-release
+                env:
+                    NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
             -   name: Setup tmate session
                 uses: mxschmitt/action-tmate@v3
                 if: ${{ github.event_name == 'workflow_dispatch' && inputs.debug_enabled && failure() }}
